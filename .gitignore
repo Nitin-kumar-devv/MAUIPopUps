@@ -1,0 +1,72 @@
+# Build results
+bin/
+obj/
+[Bb]uild[Ll]og.*
+
+# User-specific files
+*.user
+*.userosscache
+*.suo
+*.sln.docstates
+
+# Visual Studio Code
+.vscode/
+
+# Rider
+.idea/
+
+# macOS
+.DS_Store
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# MAUI-specific platform outputs
+**/Platforms/Android/obj/
+**/Platforms/Android/bin/
+**/Platforms/iOS/obj/
+**/Platforms/iOS/bin/
+**/Platforms/MacCatalyst/obj/
+**/Platforms/MacCatalyst/bin/
+**/Platforms/Tizen/obj/
+**/Platforms/Tizen/bin/
+**/Platforms/Windows/obj/
+**/Platforms/Windows/bin/
+
+# Device-specific configurations
+*.apk
+*.apks
+*.aab
+*.ipa
+
+# Local configuration files
+launchSettings.json
+
+# Logs
+*.log
+
+# Auto-generated code
+GeneratedCode/
+
+# Temporary files
+*.tmp
+*.temp
+
+# Package caches
+.nuget/
+packages/
+
+# Others
+*.vs/
+*.tlog
+*.cache/
+*.dbmdl
+*.pdb
+*.mdb
+*.exe
+*.dll
+
+# JetBrains Rider specific
+.idea/
+*.sln.iml

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppPopUpProject.Views.OcassionView"
+             xmlns:model="clr-namespace:MauiAppPopUpProject.Models"
+             xmlns:mct="clr-namespace:CommunityToolkit.Maui.Views;assembly=CommunityToolkit.Maui"
+              xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             
+             Title="My Occasion">
+    <Page.Behaviors>
+        <toolkit:StatusBarBehavior StatusBarColor="#A6F7BD"/>
+    </Page.Behaviors>
+    <Grid RowDefinitions=".3*,.2*,.5*"
+        RowSpacing="10"
+          BackgroundColor="#A6F7BD"
+          >
+        <Image  Margin="0,15,0,0"
+            Source="celebrations.jpg" />
+       
+
+        <Grid Grid.Row="1"
+            RowDefinitions="Auto, Auto"
+            ColumnDefinitions="*, *"
+            ColumnSpacing="5"
+            Padding="5">
+            <Button
+                Text="Simple Popup"
+                Clicked="SimplePopup_Clicked"/>
+
+            <Button
+                Text="Occasion Popup"
+                Clicked="OccasionPopup_Clicked"
+                Grid.Column="1"/>
+        </Grid>
+
+        <CollectionView Grid.Row="2"
+            x:Name="occasionsList"
+            SelectionMode="None"
+            Margin="5">
+            <CollectionView.ItemsLayout>
+                <LinearItemsLayout Orientation="Vertical" ItemSpacing="5"/>
+            </CollectionView.ItemsLayout>
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="model:OccasionModel">
+                    <Frame
+                        Padding="5">
+                        <Grid
+                            RowDefinitions="Auto, Auto"
+                            ColumnDefinitions="4*, 3*, 3*"
+                            Padding="10">
+                            <Label
+                                Text="{Binding Date, StringFormat='{0:dd MMM yyyy}'}"
+                                TextColor="Black"
+                                FontAttributes="Italic"/>
+
+                            <Label
+                                Text="{Binding Occasion}"
+                                TextColor="Black"
+                                FontAttributes="Bold"
+                                Grid.Column="1"/>
+
+                            <Label
+                                Text="{Binding Notes}"
+                                TextColor="Black"
+                                Grid.Row="1"
+                                Grid.ColumnSpan="2"/>
+
+                            <Image
+                                Source="{Binding Image}"
+                                WidthRequest="80"
+                                HeightRequest="80"
+                                VerticalOptions="Center"
+                                HorizontalOptions="Center"
+                                Grid.Column="2"
+                                Grid.RowSpan="2"/>
+                        </Grid>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </Grid>
+   
+</ContentPage>
